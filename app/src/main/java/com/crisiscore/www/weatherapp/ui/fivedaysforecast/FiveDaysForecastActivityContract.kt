@@ -1,10 +1,7 @@
 package com.crisiscore.www.weatherapp.ui.fivedaysforecast
 
-import com.crisiscore.www.weatherapp.net.models.fivedaysforecast.FiveDaysWeatherData
+import com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels.FiveDaysWeatherData
 
-/**
- * Created by Aliaksandr Kotau on 05.11.2017.
- */
 interface FiveDaysForecastActivityContract {
 
     interface View {

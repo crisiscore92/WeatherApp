@@ -3,9 +3,11 @@ package com.crisiscore.www.weatherapp.ui.fivedaysforecast
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.crisiscore.www.weatherapp.R
-import com.crisiscore.www.weatherapp.net.models.fivedaysforecast.FiveDaysWeatherData
+import com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels.FiveDaysWeatherData
 
-class FiveDaysForecastActivity : AppCompatActivity(), FiveDaysForecastActivityContract.View {
+class FiveDaysForecastActivity :
+        AppCompatActivity(),
+        FiveDaysForecastActivityContract.View {
 
     private val presenter = FiveDaysForecastActivityPresenter(this)
 

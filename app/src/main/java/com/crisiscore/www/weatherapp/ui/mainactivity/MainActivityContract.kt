@@ -1,8 +1,5 @@
 package com.crisiscore.www.weatherapp.ui.mainactivity
 
-/**
- * Created by Aliaksandr Kotau on 05.11.2017.
- */
 interface MainActivityContract {
 
     interface View {

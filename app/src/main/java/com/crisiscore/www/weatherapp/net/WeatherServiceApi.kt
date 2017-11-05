@@ -1,15 +1,12 @@
 package com.crisiscore.www.weatherapp.net
 
-import com.crisiscore.www.weatherapp.net.models.currentweather.CurrentWeatherData
-import com.crisiscore.www.weatherapp.net.models.fivedaysforecast.FiveDaysWeatherData
+import com.crisiscore.www.weatherapp.net.models.currentweathermodels.CurrentWeatherData
+import com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels.FiveDaysWeatherData
+import com.crisiscore.www.weatherapp.net.models.sixteendaysforecastmodels.SixteenDaysWeatherData
 import io.reactivex.Observable
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
-/**
- * Created by Aliaksandr Kotau on 05.11.2017.
- */
 interface WeatherServiceApi {
 
     @GET("weather?")
@@ -19,4 +16,8 @@ interface WeatherServiceApi {
     @GET("forecast?")
     fun getFiveDaysForecastWeatherData(@Query("q") cityName: String,
                                        @Query("appid") apiKey: String): Observable<FiveDaysWeatherData>
+
+    @GET("forecast/daily?")
+    fun getSixteenDaysForecastWeatherData(@Query("q") cityName: String,
+                                          @Query("appid") apiKey: String): Observable<SixteenDaysWeatherData>
 }

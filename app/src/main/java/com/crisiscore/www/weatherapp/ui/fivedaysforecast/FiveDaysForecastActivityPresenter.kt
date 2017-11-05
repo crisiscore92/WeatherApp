@@ -4,10 +4,8 @@ import com.crisiscore.www.weatherapp.WeatherApplication
 import com.crisiscore.www.weatherapp.repository.WeatherRepository
 import javax.inject.Inject
 
-/**
- * Created by Aliaksandr Kotau on 05.11.2017.
- */
-class FiveDaysForecastActivityPresenter(private var view: FiveDaysForecastActivity): FiveDaysForecastActivityContract.Presenter {
+class FiveDaysForecastActivityPresenter(private val view: FiveDaysForecastActivity):
+        FiveDaysForecastActivityContract.Presenter {
 
     @Inject
     lateinit var repository: WeatherRepository

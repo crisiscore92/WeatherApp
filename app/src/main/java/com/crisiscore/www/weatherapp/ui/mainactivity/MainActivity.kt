@@ -8,7 +8,9 @@ import android.widget.TextView
 import com.crisiscore.www.weatherapp.R
 import com.crisiscore.www.weatherapp.ui.fivedaysforecast.FiveDaysForecastActivity
 
-class MainActivity : AppCompatActivity(), MainActivityContract.View {
+class MainActivity :
+        AppCompatActivity(),
+        MainActivityContract.View {
 
     private val presenter = MainActivityPresenter(this)
 

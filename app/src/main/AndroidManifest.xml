@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.fivedaysforecast.FiveDaysForecastActivity"></activity>
+        <activity android:name=".ui.fivedaysforecast.FiveDaysForecastActivity" />
+        <activity android:name=".ui.sixteendaysforecast.SixteenDaysForecastActivity"></activity>
     </application>
 
 </manifest>
