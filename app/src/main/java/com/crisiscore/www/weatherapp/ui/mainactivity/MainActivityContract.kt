@@ -6,11 +6,13 @@ interface MainActivityContract {
 
         fun setCurrentTemperature(text: String)
         fun startFiveDaysForecastActivity()
+        fun setWeatherIcon(iconUrl: String?)
     }
 
     interface Presenter {
 
         fun getCurrentTemperature()
         fun onButtonClick()
+        fun getWeatherIcon()
     }
 }
