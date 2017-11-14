@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface WeatherServiceApi {
 
-    @GET("weather?")
+    @GET("weather?units=metric")
     fun getCurrentWeatherData(@Query("q") cityName: String,
                               @Query("appid") apiKey: String): Observable<CurrentWeatherData>
 

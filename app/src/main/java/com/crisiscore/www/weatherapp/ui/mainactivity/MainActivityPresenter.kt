@@ -23,7 +23,7 @@ class MainActivityPresenter(private val view: MainActivityContract.View):
     override fun getCurrentTemperature() {
         currentWeatherObservable.subscribe({weatherData -> view.setCurrentTemperature(weatherData
                 .main
-                ?.temp.toString())})
+                ?.temp?.toInt().toString() + " \u2103")})
     }
 
     override fun onButtonClick() {

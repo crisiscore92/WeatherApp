@@ -1,18 +1,21 @@
 package com.crisiscore.www.weatherapp.ui.mainactivity
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.crisiscore.www.weatherapp.R
+import com.crisiscore.www.weatherapp.ui.base.DrawerActivity
 import com.crisiscore.www.weatherapp.ui.fivedaysforecast.FiveDaysForecastActivity
+import android.view.LayoutInflater
+
 
 class MainActivity :
-        AppCompatActivity(),
+        DrawerActivity(),
         MainActivityContract.View {
 
     private val presenter = MainActivityPresenter(this)
@@ -20,15 +23,15 @@ class MainActivity :
     private lateinit var helloWorldView: TextView
     private lateinit var button: Button
     private lateinit var imageView: ImageView
-    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val contentView = inflater.inflate(R.layout.activity_main, null, false)
+        container.addView(contentView, 0)
 
         initViews()
-
-        setSupportActionBar(toolbar)
 
         presenter.getCurrentTemperature()
         presenter.getWeatherIcon()
@@ -41,8 +44,6 @@ class MainActivity :
         button.setOnClickListener {presenter.onButtonClick()}
 
         imageView = findViewById(R.id.imageView)
-
-        toolbar = findViewById(R.id.toolbar)
     }
 
     override fun setCurrentTemperature(text: String) {
@@ -55,5 +56,9 @@ class MainActivity :
 
     override fun setWeatherIcon(iconUrl: String?) {
         Glide.with(this).load(getString(R.string.basic_icon_url) + iconUrl).into(imageView)
+    }
+
+    override fun currentActivityName(): String {
+        return this::class.java.simpleName
     }
 }

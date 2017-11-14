@@ -27,6 +27,9 @@
         <activity
             android:name=".ui.sixteendaysforecast.SixteenDaysForecastActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
