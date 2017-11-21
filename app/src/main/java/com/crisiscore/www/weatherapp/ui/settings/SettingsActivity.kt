@@ -2,9 +2,9 @@ package com.crisiscore.www.weatherapp.ui.settings
 
 import android.content.Context
 import android.os.Bundle
-import com.crisiscore.www.weatherapp.R
 import android.preference.PreferenceFragment
 import android.view.LayoutInflater
+import com.crisiscore.www.weatherapp.R
 import com.crisiscore.www.weatherapp.ui.base.DrawerActivity
 
 class SettingsActivity:
@@ -30,8 +30,6 @@ class SettingsActivity:
         }
     }
 
-    override fun currentActivityName(): String {
-        return this::class.java.simpleName
-    }
+    override fun currentActivityName(): String = this::class.java.simpleName
 }
 

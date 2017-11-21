@@ -1,5 +1,6 @@
 package com.crisiscore.www.weatherapp.di
 
+import com.crisiscore.www.weatherapp.repository.WeatherRepository
 import com.crisiscore.www.weatherapp.ui.fivedaysforecast.FiveDaysForecastActivityPresenter
 import com.crisiscore.www.weatherapp.ui.mainactivity.MainActivityPresenter
 import com.crisiscore.www.weatherapp.ui.sixteendaysforecast.SixteenDaysForecastActivityPresenter
@@ -13,4 +14,5 @@ interface AppComponent {
     fun inject(mainActivityPresenter: MainActivityPresenter)
     fun inject(fiveDaysForecastActivityPresenter: FiveDaysForecastActivityPresenter)
     fun inject(sixteenDaysForecastActivityPresenter: SixteenDaysForecastActivityPresenter)
+    fun inject(weatherRepository: WeatherRepository)
 }

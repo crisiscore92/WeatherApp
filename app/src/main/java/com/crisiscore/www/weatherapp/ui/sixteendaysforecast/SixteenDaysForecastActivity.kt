@@ -1,10 +1,7 @@
 package com.crisiscore.www.weatherapp.ui.sixteendaysforecast
 
-import android.app.Activity
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import com.crisiscore.www.weatherapp.R
 import com.crisiscore.www.weatherapp.ui.base.DrawerActivity
@@ -28,7 +25,5 @@ class SixteenDaysForecastActivity:
     private fun initViews() {
     }
 
-    override fun currentActivityName(): String {
-        return this::class.java.simpleName
-    }
+    override fun currentActivityName(): String = this::class.java.simpleName
 }

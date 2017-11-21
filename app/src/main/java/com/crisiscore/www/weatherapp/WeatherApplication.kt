@@ -5,10 +5,8 @@ import com.crisiscore.www.weatherapp.di.AppComponent
 import com.crisiscore.www.weatherapp.di.AppModule
 import com.crisiscore.www.weatherapp.di.DaggerAppComponent
 import com.crisiscore.www.weatherapp.di.WeatherModule
+import io.realm.Realm
 
-/**
- * Created by Aliaksandr Kotau on 05.11.2017.
- */
 class WeatherApplication: Application() {
 
     companion object {
@@ -18,6 +16,8 @@ class WeatherApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         component = buildComponent()
+
+        Realm.init(this)
     }
 
     private fun buildComponent(): AppComponent {

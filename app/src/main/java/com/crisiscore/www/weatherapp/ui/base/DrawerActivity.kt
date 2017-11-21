@@ -1,6 +1,5 @@
 package com.crisiscore.www.weatherapp.ui.base
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView

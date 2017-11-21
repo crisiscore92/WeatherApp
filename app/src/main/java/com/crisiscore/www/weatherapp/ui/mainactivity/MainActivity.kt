@@ -1,9 +1,9 @@
 package com.crisiscore.www.weatherapp.ui.mainactivity
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.crisiscore.www.weatherapp.R
 import com.crisiscore.www.weatherapp.ui.base.DrawerActivity
 import com.crisiscore.www.weatherapp.ui.fivedaysforecast.FiveDaysForecastActivity
-import android.view.LayoutInflater
 
 
 class MainActivity :
@@ -58,7 +57,5 @@ class MainActivity :
         Glide.with(this).load(getString(R.string.basic_icon_url) + iconUrl).into(imageView)
     }
 
-    override fun currentActivityName(): String {
-        return this::class.java.simpleName
-    }
+    override fun currentActivityName(): String = this::class.java.simpleName
 }

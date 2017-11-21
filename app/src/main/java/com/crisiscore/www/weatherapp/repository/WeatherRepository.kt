@@ -32,7 +32,7 @@ class WeatherRepository(private val context: Context):
     override fun getCurrentWeather(cityName: String): Observable<CurrentWeatherData> {
         return weatherService.getCurrentWeatherData(cityName, context.getString(R.string.api_key))
                 .applySchedulers()
-    }
+}
 
     override fun getFiveDaysForecastWeatherData(cityName: String): Observable<FiveDaysWeatherData> {
         return weatherService.getFiveDaysForecastWeatherData(cityName, context.getString(R.string.api_key))

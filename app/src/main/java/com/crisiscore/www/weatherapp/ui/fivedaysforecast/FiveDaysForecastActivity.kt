@@ -1,6 +1,5 @@
 package com.crisiscore.www.weatherapp.ui.fivedaysforecast
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,7 +32,5 @@ class FiveDaysForecastActivity :
 
     }
 
-    override fun currentActivityName(): String {
-        return this::class.java.simpleName
-    }
+    override fun currentActivityName(): String = this::class.java.simpleName
 }

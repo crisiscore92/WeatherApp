@@ -5,7 +5,6 @@ import com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels.FiveDaysW
 import com.crisiscore.www.weatherapp.net.models.sixteendaysforecastmodels.SixteenDaysWeatherData
 import io.reactivex.Observable
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface WeatherServiceApi {

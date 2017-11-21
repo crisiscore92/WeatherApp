@@ -6,4 +6,11 @@
         android:title="Location"
         android:summary="Default location" />
 
+    <ListPreference
+        android:key="update_intervals"
+        android:entries="@array/entries"
+        android:entryValues="@array/entry_values"
+        android:title="Update period"
+        android:summary="List of preset update periods"/>
+
 </PreferenceScreen>

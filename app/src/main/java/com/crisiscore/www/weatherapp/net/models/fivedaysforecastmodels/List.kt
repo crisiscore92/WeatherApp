@@ -2,7 +2,6 @@ package com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlin.collections.List
 
 class List {
 
@@ -14,7 +13,7 @@ class List {
     var main: Main? = null
     @SerializedName("weather")
     @Expose
-    var weather: List<Weather>? = null
+    var weather: ArrayList<Weather>? = null
     @SerializedName("clouds")
     @Expose
     var clouds: Clouds? = null
