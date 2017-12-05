@@ -4,7 +4,7 @@
     <EditTextPreference
         android:key="location"
         android:title="Location"
-        android:summary="Default location" />
+        android:summary="Forecast for given location" />
 
     <ListPreference
         android:key="update_intervals"

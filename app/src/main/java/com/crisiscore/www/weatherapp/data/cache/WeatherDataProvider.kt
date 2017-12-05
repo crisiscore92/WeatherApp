@@ -5,9 +5,12 @@ import io.realm.Realm
 
 class WeatherDataProvider {
 
-    fun receiveCurrentWeatherData(): CurrentWeatherDataLocal? {
-        val realm = Realm.getDefaultInstance()
+    companion object {
 
-        return realm.where(CurrentWeatherDataLocal::class.java).findFirst()
+        fun receiveCurrentWeatherData(): CurrentWeatherDataLocal? {
+            val realm = Realm.getDefaultInstance()
+
+            return realm.where(CurrentWeatherDataLocal::class.java).findFirst()
+        }
     }
 }

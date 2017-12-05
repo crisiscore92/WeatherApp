@@ -2,7 +2,6 @@ package com.crisiscore.www.weatherapp.net.models.currentweathermodels
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import io.realm.annotations.PrimaryKey
 
 class CurrentWeatherData {
 
@@ -42,7 +41,6 @@ class CurrentWeatherData {
     @Expose
     var sys: Sys? = null
 
-    @PrimaryKey
     @SerializedName("id")
     @Expose
     var id: Int? = null

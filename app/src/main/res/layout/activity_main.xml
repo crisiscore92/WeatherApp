@@ -4,36 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.crisiscore.www.weatherapp.ui.mainactivity.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:layout_margin="16dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:id="@+id/helloWorldView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Hello World!"
-        android:gravity="center"
-        android:textSize="60sp"
-        android:layout_alignParentEnd="true"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/weatherIconAndTemp"
         android:layout_margin="16dp"
-        android:text="Start five days forecast activity"
-        android:layout_below="@+id/imageView"/>
+        app:cardCornerRadius="4dp"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="16dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewsContainer"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/imageView"
+                android:layout_alignBottom="@id/imageView">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mainDescriptionView"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center|start"
+                    android:textSize="38sp"
+                    />
+
+                <TextView
+                    android:id="@+id/temperatureView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center|start"
+                    android:textSize="68sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="4dp"
+        android:elevation="4dp"
+        android:layout_below="@+id/weatherIconAndTemp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/weatherConditionsView"
+            android:layout_margin="16dp"
+            android:gravity="center|start"
+            android:textSize="24sp"/>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

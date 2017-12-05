@@ -1,16 +1,16 @@
 package com.crisiscore.www.weatherapp.ui.fivedaysforecast
 
-import com.crisiscore.www.weatherapp.net.models.fivedaysforecastmodels.FiveDaysWeatherData
+import com.crisiscore.www.weatherapp.ui.fivedaysforecast.adapters.ViewPagerDaysAdapter
 
 interface FiveDaysForecastActivityContract {
 
     interface View {
 
-        fun setFiveDaysForecastWeatherData(fiveDaysForecastWeatherData: FiveDaysWeatherData)
+        fun setUpViewPagerDaysAdapter(receivedDateList: ArrayList<String>)
     }
 
     interface Presenter {
 
-        fun getFiveDaysForecastWeatherData()
+        fun getDataForViewPagerDaysAdapter()
     }
 }

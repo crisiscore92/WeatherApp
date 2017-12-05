@@ -2,7 +2,7 @@
 
     <string name="basic_weather_url">http://api.openweathermap.org/data/2.5/</string>
     <string name="basic_icon_url">http://openweathermap.org/img/w/</string>
-    <string name="api_key">44930a5813d2c66becefa4f561b1f265"</string>
+    <string name="api_key">44930a5813d2c66becefa4f561b1f265</string>
     <string name="app_name">WeatherApp</string>
     <string name="title_activity_drawer">DrawerActivity</string>
 
@@ -15,7 +15,6 @@
 
     <!-- Strings related to Settings -->
     <string-array name="entries">
-        <item>30 minutes</item>
         <item>1 hour</item>
         <item>2 hours</item>
         <item>3 hours</item>
@@ -23,11 +22,15 @@
         <item>5 hours</item>
     </string-array>
     <string-array name="entry_values">
-        <item>30</item>
         <item>60</item>
         <item>120</item>
         <item>180</item>
         <item>240</item>
         <item>300</item>
     </string-array>
+
+    <!-- Strings related to MainActivity -->
+    <string name="humidity"><b>Humidity:</b></string>
+    <string name="pressure"><b>Pressure:</b></string>
+    <string name="wind"><b>Wind:</b></string>
 </resources>

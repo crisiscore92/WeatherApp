@@ -6,45 +6,48 @@ import io.realm.Realm
 
 class WeatherDataSaver {
 
-    fun saveCurrentWeatherData(currentWeatherData: CurrentWeatherData) {
-        val realm = Realm.getDefaultInstance()
+    companion object {
 
-        realm.executeTransaction({ realm ->
-            val cloudsLocal = realm.createObject(CloudsLocal::class.java)
-            cloudsLocal.all = currentWeatherData.clouds?.all
+        fun saveCurrentWeatherData(currentWeatherData: CurrentWeatherData) {
+            val realm = Realm.getDefaultInstance()
 
-            val coordLocal = realm.createObject(CoordLocal::class.java)
-            coordLocal.lat = currentWeatherData.coord?.lat
-            coordLocal.lon = currentWeatherData.coord?.lon
+            realm.executeTransaction({ realm ->
+                val cloudsLocal = realm.createObject(CloudsLocal::class.java)
+                cloudsLocal.all = currentWeatherData.clouds?.all
 
-            val mainLocal = realm.createObject(MainLocal::class.java)
-            mainLocal.humidity = currentWeatherData.main?.humidity
-            mainLocal.pressure = currentWeatherData.main?.pressure
-            mainLocal.temp = currentWeatherData.main?.temp
-            mainLocal.tempMax = currentWeatherData.main?.tempMax
-            mainLocal.tempMin = currentWeatherData.main?.tempMin
+                val coordLocal = realm.createObject(CoordLocal::class.java)
+                coordLocal.lat = currentWeatherData.coord?.lat
+                coordLocal.lon = currentWeatherData.coord?.lon
 
-            val sysLocal = realm.createObject(SysLocal::class.java)
-            sysLocal.country = currentWeatherData.sys?.country
-            sysLocal.sunrise = currentWeatherData.sys?.sunrise
-            sysLocal.sunset = currentWeatherData.sys?.sunset
+                val mainLocal = realm.createObject(MainLocal::class.java)
+                mainLocal.humidity = currentWeatherData.main?.humidity
+                mainLocal.pressure = currentWeatherData.main?.pressure
+                mainLocal.temp = currentWeatherData.main?.temp
+                mainLocal.tempMax = currentWeatherData.main?.tempMax
+                mainLocal.tempMin = currentWeatherData.main?.tempMin
 
-            val weatherLocal = realm.createObject(WeatherLocal::class.java)
-            weatherLocal.main = currentWeatherData.weather?.get(0)?.main
-            weatherLocal.description = currentWeatherData.weather?.get(0)?.description
-            weatherLocal.icon = currentWeatherData.weather?.get(0)?.icon
+                val sysLocal = realm.createObject(SysLocal::class.java)
+                sysLocal.country = currentWeatherData.sys?.country
+                sysLocal.sunrise = currentWeatherData.sys?.sunrise
+                sysLocal.sunset = currentWeatherData.sys?.sunset
 
-            val windLocal = realm.createObject(WindLocal::class.java)
-            windLocal.speed = currentWeatherData.wind?.speed
+                val weatherLocal = realm.createObject(WeatherLocal::class.java)
+                weatherLocal.main = currentWeatherData.weather?.get(0)?.main
+                weatherLocal.description = currentWeatherData.weather?.get(0)?.description
+                weatherLocal.icon = currentWeatherData.weather?.get(0)?.icon
 
-            val currentWeatherDataLocal = realm.createObject(CurrentWeatherDataLocal::class.java, System.currentTimeMillis())
-            currentWeatherDataLocal.dt = currentWeatherData.dt
-            currentWeatherDataLocal.cloudsLocal = cloudsLocal
-            currentWeatherDataLocal.coordLocal = coordLocal
-            currentWeatherDataLocal.mainLocal = mainLocal
-            currentWeatherDataLocal.sysLocal = sysLocal
-            currentWeatherDataLocal.weatherLocal?.add(weatherLocal)
-            currentWeatherDataLocal.windLocal = windLocal
-        })
+                val windLocal = realm.createObject(WindLocal::class.java)
+                windLocal.speed = currentWeatherData.wind?.speed
+
+                val currentWeatherDataLocal = realm.createObject(CurrentWeatherDataLocal::class.java, System.currentTimeMillis())
+                currentWeatherDataLocal.dt = currentWeatherData.dt
+                currentWeatherDataLocal.cloudsLocal = cloudsLocal
+                currentWeatherDataLocal.coordLocal = coordLocal
+                currentWeatherDataLocal.mainLocal = mainLocal
+                currentWeatherDataLocal.sysLocal = sysLocal
+                currentWeatherDataLocal.weatherLocal?.add(weatherLocal)
+                currentWeatherDataLocal.windLocal = windLocal
+            })
+        }
     }
 }

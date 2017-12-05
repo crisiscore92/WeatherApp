@@ -13,11 +13,11 @@ interface WeatherServiceApi {
     fun getCurrentWeatherData(@Query("q") cityName: String,
                               @Query("appid") apiKey: String): Observable<CurrentWeatherData>
 
-    @GET("forecast?")
+    @GET("forecast?units=metric")
     fun getFiveDaysForecastWeatherData(@Query("q") cityName: String,
                                        @Query("appid") apiKey: String): Observable<FiveDaysWeatherData>
 
-    @GET("forecast/daily?")
+    @GET("forecast/daily?units=metric")
     fun getSixteenDaysForecastWeatherData(@Query("q") cityName: String,
                                           @Query("appid") apiKey: String): Observable<SixteenDaysWeatherData>
 }
